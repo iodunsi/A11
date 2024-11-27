@@ -12,23 +12,43 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
     width: 98%;
-    max-width: 960px;
     margin: 0 auto;
     border: 3px solid #931420;
     background-color: #fffded;
 }
 
-img {
-    max-width: 40%;
-    min-width: 150px;
-}
-
-a:focus,
-a:hover {
+a:focus, a:hover {
     font-style: italic;
 }
 
-/* Navigation Menu */
+/* Header Styles */
+header {
+    padding: 1.5em 0 2em 0;
+    border-bottom: 3px solid #931420;
+    background-image: linear-gradient(
+        30deg, #f6bb73 0%, #f6bb73 30%, white 50%, #f6bb73 80%, #f6bb73 100%);
+}
+
+header h2 {
+    font-size: 175%;
+    color: #800000;
+}
+
+header h3 {
+    font-size: 130%;
+    font-style: italic;
+}
+
+header img {
+    float: left;
+    padding: 0 30px;
+}
+
+.shadow {
+    text-shadow: 2px 2px 2px #800000;
+}
+
+/* Navigation Menu Styles */
 #nav_menu ul {
     list-style-type: none;
     margin: 0;
@@ -42,7 +62,7 @@ a:hover {
 
 #nav_menu ul li a {
     display: block;
-    width: 100%; /* Changed to fluid width */
+    width: 160px;
     text-align: center;
     padding: 1em 0;
     text-decoration: none;
@@ -75,53 +95,134 @@ a:hover {
     display: block;
 }
 
-/* Section and Aside */
+/* Mobile Navigation Menu (SlickNav) */
+#mobile_menu {
+    display: none;
+}
+
+/* Section Styles */
 section {
-    width: 60%;
-    float: left;
-    padding: 2%;
-}
-
-aside {
-    width: 30%;
+    width: 525px;
     float: right;
-    padding: 2%;
+    padding: 0 20px 20px 20px;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+section h1 {
+    font-size: 150%;
+    padding: .5em 0 .25em 0;
+    margin: 0;
+}
+
+section h2 {
+    color: #800000;
+    font-size: 130%;
+    padding: .5em 0 .25em 0;
+}
+
+section p {
+    padding-bottom: .5em;
+}
+
+section blockquote {
+    padding: 0 2em;
+    font-style: italic;
+}
+
+section ul {
+    padding: 0 0 .25em 1.25em;
+    list-style-type: circle;
+}
+
+section li {
+    padding-bottom: .35em;
+}
+
+/* Article Styles */
+article {
+    padding: .5em 0;
+    border-top: 2px solid #800000;
+    border-bottom: 2px solid #800000;
+}
+
+article h2 {
+    padding-top: 0;
+}
+
+article h3 {
+    font-size: 105%;
+    padding-bottom: .25em;
+}
+
+.article-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Aside Styles */
+aside {
+    width: 215px;
+    float: right;
+    padding: 0 0 20px 20px;
+}
+
+aside h2 {
+    color: #800000;
+    font-size: 130%;
+    padding: .5em 0 .25em 0;
+}
+
+aside h3 {
+    font-size: 105%;
+    padding-bottom: .25em;
+}
+
+aside img {
+    padding-bottom: 1em;
+    max-width: 100%;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #931420;
+    clear: both;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+    padding: 1em 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
     body {
-        font-size: 90%;
-    }
-
-    section {
         width: 100%;
-        float: none;
-        padding: 1%;
     }
 
-    aside {
-        width: 100%;
-        float: none;
-        padding: 1%;
+    header, nav, main, aside, section {
+        text-align: center;
+        padding: 10px;
     }
 
-    section h1 {
-        font-size: 125%;
+    #nav_menu {
+        display: none;
     }
 
-    section h2, aside h2 {
-        font-size: 110%;
+    #mobile_menu {
+        display: block;
     }
-}
 
-@media screen and (max-width: 480px) {
     section, aside {
         width: 100%;
         float: none;
+        padding: 10px;
     }
 
-    a {
-        font-size: 85%;
+    .article-image, aside img {
+        max-width: 90%;
+    }
+
+    footer p {
+        padding: 1.5em 0;
     }
 }
